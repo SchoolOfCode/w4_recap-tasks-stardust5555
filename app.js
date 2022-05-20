@@ -9,6 +9,12 @@ import {
 const PORT = 3000;
 const app = express();
 
+//Task 1 - GET request
+import userData from "./libs/users.js";
+//const users = userData.users
+import userRouter from "./routes/users.js";
+
+//Middleware
 app.use(express.json());
 
 app.listen(PORT, () => {
