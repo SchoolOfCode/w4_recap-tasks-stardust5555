@@ -13,4 +13,26 @@ usersRouter.get("/", function (req, res){
     res.json(responseObject);
 })
 
+//module.exports = usersRouter;
+
+//Task 2 - GET request ID
+usersRouter.get("/:id", function (req, res){
+    const requestedID = req.params.id;
+    let requestedUser = {};
+
+    for (let i = 0; i < users.length; i++) {
+        if (Number(requestedID) === users[i].id){
+            requestedUser = users[i];
+            break;
+        }  
+    }
+
+    const responseObject ={
+        success:true,
+        message: `You requested the user with an id of ${requestedID}`,
+        payload: requestedUser
+    }
+    res.json(responseObject);
+})
+
 module.exports = usersRouter;
