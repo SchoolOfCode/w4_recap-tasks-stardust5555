@@ -3,6 +3,7 @@
 1. Import user data from libs
 ??2. Now that we have access to the user data. We want to specifically access the user array from the user data (using dot notation)
 3. Import the user router from routes folder.
+4. Use app.use("/users",usersData) so that when the client searches localhost:3000/users, we run the functio usersData which links to our users.js file in the routes folder.
 
 ## In user.js (routes folder)
 Introductory Stuff
@@ -11,8 +12,8 @@ Introductory Stuff
 6. Import the user data from the library
 
 GET request stuff
-5. GET request (we want the all the user data to be shown on the root page)
-    - We want it to go from root path
+5. GET request (we want the all the user data to be at the /users page)
+    - We want it to go from the /users path (so this means "/" in the routes folder, but "/users" in the app.js file)
     - Create a function that takes in request & response
     - Create a response Object
         - Shows if it has been success
