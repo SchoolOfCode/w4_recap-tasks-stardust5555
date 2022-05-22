@@ -14,12 +14,13 @@ const userData =  require("./libs/users.js");
 const users = userData.users;
 const usersRouter = require("./routes/users.js");
 
-app.use("/users", usersRouter);    //
+
 
 
 
 //Middleware
 app.use(express.json());
+app.use("/users", usersRouter);    
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
