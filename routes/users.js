@@ -75,7 +75,28 @@ usersRouter.put("/:id", function(req,res){
 
 // Task 5 - DELETE (Delete an existing user)
 usersRouter.delete("/:id", function(req,res){
-    
+    const requestedID = req.params.id;
+    let deletedUser = {};
+
+    for (let i = 0; i < users.length; i++) {
+        if (Number(requestedID) === users[i].id){
+            //Store users[i] in deletedUser 
+            deletedUser = users[i];
+        } 
+    }
+    //Deleting the user
+        //At position (requestedID -1), remove one item
+    users.splice((Number(requestedID)-1),1)
+
+    const responseObject = {
+        success:true,
+        message: `You deleted the user with the id of ${requestedID}`,
+        payload: deletedUser
+    }
+
+    res.json(responseObject);
 })
+
+module.exports= usersRouter;
 
 

@@ -110,8 +110,11 @@ When the client requests a specific user (using an id), we want to search throug
 
 - For loop 
     - If statement (condition: "if the requested ID matched the ID of a particular user)
-    - Remove this user from the users array (splice?)
-    - Place this deleted user into our empty variable
+    - Place this user into our empty variable
+
+-Splicing the user from the users array
+    - Use splice
+    - At position (requestedID), remove one item i.e. users.splice((Number(requestedID)-1),1)
 
 Response Object
     - Success:true
